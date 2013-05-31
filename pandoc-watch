@@ -10,6 +10,9 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 def which(program):
+    """
+    This function is taken from http://stackoverflow.com/questions/377017/test-if-executable-exists-in-python
+    """
     import os
     def is_exe(fpath):
         return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
