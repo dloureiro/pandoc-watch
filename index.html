@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pandoc-watch by dloureiro</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Pandoc-watch</h1>
+        <p class="header">A simple watcher that calls the pandoc command with the provided arguments when a file/folder modification is detected</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/dloureiro/pandoc-watch/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/dloureiro/pandoc-watch/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/dloureiro/pandoc-watch">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/dloureiro">dloureiro</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="pandoc-watch" class="anchor" href="#pandoc-watch"><span class="octicon octicon-link"></span></a>pandoc-watch</h1>
+
+<h2>
+<a name="goal" class="anchor" href="#goal"><span class="octicon octicon-link"></span></a>Goal</h2>
+
+<p>A simple watcher used to call the <code>pandoc</code> command with the provided arguments when a file/folder modification is detected.</p>
+
+<h2>
+<a name="details" class="anchor" href="#details"><span class="octicon octicon-link"></span></a>Details</h2>
+
+<p><code>pandoc-watch</code>is a simple script used to perform the pandoc compilation based on the provided arguments.</p>
+
+<p>It's written in python and uses the <code>watchdog</code> module to catch file/folder events.</p>
+
+<p><code>pandoc</code> is a general purpose compiler used to convert files from one markup format into another. For more information, please refer to pandoc website : <a href="http://johnmacfarlane.net/pandoc">http://johnmacfarlane.net/pandoc</a></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>First things first, intall the <code>watchdog</code> module with <code>pip</code> through the following command:</p>
+
+<pre><code>$ pip install watchdog
+</code></pre>
+
+<p>Then clone the repository wherever you want and add it to your path: </p>
+
+<pre><code>$ git clone git@github.com:dloureiro/pandoc-watch.git
+$ export PATH=$(pwd):$PATH
+</code></pre>
+
+<p>Simple as that!</p>
+
+<p>You sure need to have a functionnal installation of <code>pandoc</code> on your machine and it should  be available in the <code>PATH</code></p>
+
+<p>You can download it from John Mac Farlane dedicated website : <a href="http://johnmacfarlane.net/pandoc">http://johnmacfarlane.net/pandoc</a></p>
+
+<h2>
+<a name="how-to-use-pandoc-watch" class="anchor" href="#how-to-use-pandoc-watch"><span class="octicon octicon-link"></span></a>How to use <code>pandoc-watch</code>
+</h2>
+
+<p><code>pandoc-watch</code> mainly adds an extra argument to the <code>pandoc</code> standard options : <code>-e,--exclude</code> used to exclude:</p>
+
+<ul>
+<li>file extensions</li>
+<li>folders </li>
+</ul><p>from the monitoring when watching for file or folder changes.</p>
+
+<p>Aside from this option, the reminder is passed to the <code>pandoc</code> executable without modification.</p>
+
+<h3>
+<a name="default-exclusions" class="anchor" href="#default-exclusions"><span class="octicon octicon-link"></span></a>Default exclusions</h3>
+
+<p>If no exclusion option is provided the default value is <code>.pdf,.tex,doc,bin,common</code>. This default values fit my needs and can be modified if necessary.</p>
+
+<h3>
+<a name="excluding-file-extensions-from-the-monitoring" class="anchor" href="#excluding-file-extensions-from-the-monitoring"><span class="octicon octicon-link"></span></a>Excluding file extensions from the monitoring</h3>
+
+<p>To add file extensions to the excluded extensions, call <code>pandoc-watch</code> as follow:</p>
+
+<pre><code>pandoc-watch -e ".pdf,.tex" ...
+</code></pre>
+
+<p>This commande will exclude all files with <code>pdf</code> or <code>tex</code> extensions from the monitoring.</p>
+
+<h3>
+<a name="excluding-folders-from-the-monitoring" class="anchor" href="#excluding-folders-from-the-monitoring"><span class="octicon octicon-link"></span></a>Excluding folders from the monitoring</h3>
+
+<p>To exclude folders from the monitoring, call <code>pandoc-watch</code> as follow:</p>
+
+<pre><code>pandoc-watch -e "bin,common"
+</code></pre>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><code>pandoc-watch</code>is provided under the AGPL v3.0 license.</p>
+
+<p>Please refer to the <code>COPYING</code> file for detail information.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
