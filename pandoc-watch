@@ -201,6 +201,11 @@ def parseOptions():
 
 def main():
 
+    pandoc_path = which("pandoc")
+    if not pandoc_path :
+        print "pandoc executable must be in the path to be used by pandoc-watch!"
+        exit()
+
     config = Configuration.Instance()
 
     parseOptions()
@@ -226,8 +231,4 @@ def main():
         exit()
 
 if __name__ == '__main__':
-    pandoc_path = which("pandoc")
-    if not pandoc_path :
-        print "pandoc executable must be in the path to be used by pandoc-watch!"
-        exit()
     main()
