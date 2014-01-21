@@ -39,7 +39,7 @@ You can download it from John Mac Farlane dedicated website : [http://johnmacfar
  
 from the monitoring when watching for file or folder changes.
 
-Aside from this option, the reminder is passed to the `pandoc` executable without modification.
+Aside from this option, the remaining is passed to the `pandoc` executable without modification.
 
 ### Default exclusions
 
