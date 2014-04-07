@@ -21,7 +21,7 @@ First things first, intall the `watchdog` module with `pip` through the followin
 
 Then clone the repository wherever you want and add it to your path: 
 
-    $ git clone git@github.com:dloureiro/pandoc-watch.git
+    $ git clone https://github.com/dloureiro/pandoc-watch.git
     $ export PATH=$(pwd):$PATH
 
 Simple as that!
